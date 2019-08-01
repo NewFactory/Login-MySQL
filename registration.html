@@ -8,10 +8,10 @@
   </head>
   <body>
     <div class="conteiner mt-4">
-     <h1>Registration form</h1><br>
-      <form action="check.php" method="post">
+     <h1>Havework</h1><br>
+      <form action="validation-form/check.php" method="post">
         <input type="text" class="form-control" name="login_user"
-        id="login_user" placeholder="Login (number of characters from 5 to 12)"><br>
+        id="login_user" placeholder="Login (number of characters from 5 to 32)"><br>
         <input type="password" class="form-control" name="password_user"
         id="password_user" placeholder="Password (number of characters from 4 to 10)"><br>
         <input type="text" class="form-control" name="first_name_user"
@@ -22,8 +22,13 @@
         id="city_user" placeholder="City (number of characters from 1 to 32)"><br>
         <input type="text" class="form-control" name="email_user"
         id="email_user" placeholder="Email (number of characters from 3 to 32)"><br>
-        <button class="btn btn-success"type="submit">Registration</button>
-        </form>
-    </div>
-  </body>
+        <button class="btn btn-success"type="submit">Chek in</button>
+      </form>
+  </div>
+  <div class="conteiner mt-4">
+    <form action="index.php" method="post">
+    <button class="btn btn-success"type="submit">Log in</button>
+  </form>
+  </div>
+</body>
 </html>
