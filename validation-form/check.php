@@ -32,19 +32,23 @@ if (mb_strlen($login_user) < 5 || mb_strlen($login_user) > 32) {
 $password_user = md5($password_user."utyhrgfrbgf");
 
 require "../blocks/connect.php";
-$result_check = $mysql -> query ("SELECT * FROM `users` WHERE `login_user` =
-'$login_user' OR `email_user` = '$email_user'");
-$user_not_find = $result_check -> fetch_assoc();
-if (count ($user_not_find) == 0) {
+$result_check_login = $mysql -> query ("SELECT * FROM `users` WHERE `login_user` = '$login_user'");
+$result_check_email = $mysql -> query ("SELECT * FROM `users` WHERE `email_user` = '$email_user'");
+$user_not_find_login = $result_check_login -> fetch_assoc();
+$user_not_find_email = $result_check_email -> fetch_assoc();
+if (isset($user_not_find_login) && !empty($user_not_find_login)) {
+  echo "This login is already taken";
+  exit();
+}
+else
+if (isset($user_not_find_email) && !empty($user_not_find_email)) {
+    echo "This email is already taken";
+    exit();
+}
+
 $mysql->query("INSERT INTO `users` (`creator_user`, `login_user`, `password_user`, `email_user`, `first_name_user`, `second_name_user`, `city_user`)
 VALUES ('web', '$login_user', '$password_user', '$email_user', '$first_name_user', '$second_name_user', '$city_user')");
 $mysql->close();
-}
-else {
-  echo "такой логин уже занят";
-  exit();
-}
 
-header ('Location:/')
-
+header ("Location: /index.php");
 ?>

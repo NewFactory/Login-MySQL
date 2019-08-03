@@ -9,8 +9,8 @@
   <body>
     <div class="conteiner mt-4">
       <?php
-      //ini_set('display_errors','On'); - выводить информацию об ошибке
-      //error_reporting(E_ALL|E_STRICT); - выводить информацию об ошибке
+      ini_set('display_errors','On'); - выводить информацию об ошибке
+      error_reporting(E_ALL|E_STRICT); - выводить информацию об ошибке
 
       if ($_COOKIE['user'] == ''):
        ?>
@@ -29,7 +29,7 @@
     </form>
     </div>
   <?php else:?>
-      <p> Hi <?=$_COOKIE['user']?>. Чтобы выйти, нажми <a href="/exit.php"> здесь </a>.</p>
+      <p> Hi <?=$_COOKIE['user']?>. <a href="/exit.php"> EXIT </a></p>
   <?php endif;?>
   </body>
 </html>

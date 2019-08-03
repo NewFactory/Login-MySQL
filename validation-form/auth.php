@@ -11,15 +11,10 @@ require "../blocks/connect.php";
 $result = $mysql -> query ("SELECT * FROM `users` WHERE `login_user` =
 '$login_user' AND `password_user` = '$password_user'");
 $user = $result -> fetch_assoc();
-if (count ($user) == 0) {
-  echo "User is not found";
-  exit();
-}
-
+if (isset($user) && !empty($user)) {
 setcookie ('user', $user['login_user'], time() + 3600, "/");
-
 $mysql->close();
-
-header ('Location:/')
-
+header ("Location: /index.php");
+}
+else echo "User is not found";
 ?>
