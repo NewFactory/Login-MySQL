@@ -13,7 +13,7 @@ if (mb_strlen($login_user) < 5 || mb_strlen($login_user) > 32) {
   echo "Login is not correct - number of characters from 5 to 32";
   exit();
 } else if(mb_strlen($password_user) < 4 || mb_strlen($password_user) > 10) {
-  echo "Password name is not correct - number of characters from 4 to 10";
+  echo "Password is not correct - number of characters from 4 to 10";
   exit();
 } else if(mb_strlen($first_name_user) < 1 || mb_strlen($first_name_user) > 30) {
   echo "First name is not correct - number of characters from 1 to 32";
@@ -25,7 +25,7 @@ if (mb_strlen($login_user) < 5 || mb_strlen($login_user) > 32) {
   echo "City is not correct - number of characters from 1 to 32";
   exit();
 } else if(mb_strlen($email_user) < 3 || mb_strlen($email_user) > 30) {
-  echo "Email name is not correct - number of characters from 3 to 30";
+  echo "Email is not correct - number of characters from 3 to 30";
   exit();
 }
 
